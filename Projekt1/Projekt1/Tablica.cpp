@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-//#include <algorithm>
+#include <time.h>
 
 
 
@@ -8,12 +8,13 @@
 
 void bubble(int tab[], int s)
 {
-	int zamiana = 0;
+	bool zamiana = 0;
 	do
 	{
+		zamiana = 0;
 		for (int i = 0; i < s-1; i++)
 		{
-			zamiana = 0;
+			
 			if (tab[i] > tab[i + 1])
 			{
 				std::swap(tab[i], tab[i + 1]);
@@ -22,29 +23,28 @@ void bubble(int tab[], int s)
 			}
 		}
 		
-	} while (zamiana =! 0);
+	} while (zamiana);
 }
-
-
-int xd = 5;
-
 
 
 
 int main()
 {
-	const int k = 5;
+	time_t TimeStart, TimeEnd;
+	const int k = 60000;
 	int tab_10k[k];
 	for (int i = 0; i < k; i++)
 	{
 		tab_10k[i] = std::rand();
 	}
-	for (int i = 0; i < k; i++)
+	/*for (int i = 0; i < k; i++)
 	{
 		std::cout << tab_10k[i] << " ";
-	}
+	}*/
+	time(&TimeStart);
 	bubble(tab_10k, k);
-	std::cout << "Posortowane";
+	time(&TimeEnd);
+	std::cout << "Posortowane\nCzas sortowania: " << difftime(TimeEnd, TimeStart)<<" sekundy\n";
 	for (int i = 0; i < k; i++)
 	{
 		std::cout << tab_10k[i] << " ";
