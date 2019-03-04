@@ -115,7 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Źródło.cpp" />
+    <ClCompile Include="Tablica.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
