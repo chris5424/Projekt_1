@@ -22,7 +22,4 @@
   <ItemGroup>
     <Text Include="readme.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="X:\STUDIA\Semestr 4\PAMSI\Projekt\projekt1.pdf" />
-  </ItemGroup>
 </Project>
