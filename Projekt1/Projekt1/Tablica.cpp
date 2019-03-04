@@ -2,10 +2,6 @@
 #include <cstdlib>
 #include <time.h>
 
-
-
-
-
 void bubble(int tab[], int s)
 {
 	bool zamiana = 0;
@@ -17,9 +13,11 @@ void bubble(int tab[], int s)
 			
 			if (tab[i] > tab[i + 1])
 			{
-				std::swap(tab[i], tab[i + 1]);
+				int temp;
+				temp=tab[i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = temp;
 				zamiana = 1;
-				//std::cout << "Zamiana";
 			}
 		}
 		
@@ -31,7 +29,7 @@ void bubble(int tab[], int s)
 int main()
 {
 	time_t TimeStart, TimeEnd;
-	const int k = 10000;
+	const int k = 100000;
 	int tab_10k[k];
 	for (int i = 0; i < k; i++)
 	{
@@ -45,10 +43,10 @@ int main()
 	bubble(tab_10k, k);
 	time(&TimeEnd);
 	std::cout << "Posortowane\nCzas sortowania: " << difftime(TimeEnd, TimeStart)<<" sekundy\n";
-	/*for (int i = 0; i < k; i++)
+	for (int i = 0; i < k; i++)
 	{
 		std::cout << tab_10k[i] << " ";
-	}*/
+	}
 	
 	system("pause");
 }
