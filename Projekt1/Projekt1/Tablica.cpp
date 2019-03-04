@@ -31,7 +31,7 @@ void bubble(int tab[], int s)
 int main()
 {
 	time_t TimeStart, TimeEnd;
-	const int k = 60000;
+	const int k = 10000;
 	int tab_10k[k];
 	for (int i = 0; i < k; i++)
 	{
@@ -45,10 +45,10 @@ int main()
 	bubble(tab_10k, k);
 	time(&TimeEnd);
 	std::cout << "Posortowane\nCzas sortowania: " << difftime(TimeEnd, TimeStart)<<" sekundy\n";
-	for (int i = 0; i < k; i++)
+	/*for (int i = 0; i < k; i++)
 	{
 		std::cout << tab_10k[i] << " ";
-	}
+	}*/
 	
 	system("pause");
 }
