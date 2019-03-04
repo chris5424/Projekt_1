@@ -26,7 +26,7 @@ void bubble(int tab[], int s)
 }
 
 
-
+int xd = 5;
 
 
 
