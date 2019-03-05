@@ -1,4 +1,3 @@
-#include <iostream>
 #include "insert.hpp"
 
 bool insert(int tab[], int s)

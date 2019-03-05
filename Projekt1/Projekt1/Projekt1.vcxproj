@@ -119,6 +119,7 @@
     <ClCompile Include="generator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="insert.cpp" />
+    <ClCompile Include="merge.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
@@ -127,6 +128,7 @@
     <ClInclude Include="bubble.hpp" />
     <ClInclude Include="generator.hpp" />
     <ClInclude Include="insert.hpp" />
+    <ClInclude Include="merge.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
