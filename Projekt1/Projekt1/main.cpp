@@ -5,7 +5,6 @@
 #include "bubble.hpp"
 
 
-
 int main()
 {
 	time_t TimeStart, TimeEnd;

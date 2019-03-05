@@ -1,6 +1,6 @@
 #include "bubble.hpp"
-
-void bubble(int tab[], int s)
+template <typename T1>
+bool bubble(T1 tab[], int s)
 {
 	bool zamiana = 0;
 	do
@@ -11,7 +11,7 @@ void bubble(int tab[], int s)
 
 			if (tab[i] > tab[i + 1])
 			{
-				int temp;
+				T1 temp;
 				temp = tab[i];
 				tab[i] = tab[i + 1];
 				tab[i + 1] = temp;
@@ -20,4 +20,5 @@ void bubble(int tab[], int s)
 		}
 
 	} while (zamiana);
+	return 1;
 }
