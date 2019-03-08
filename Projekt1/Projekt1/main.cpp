@@ -19,21 +19,22 @@ int main()
 	{
 		tab_10k[i] = std::rand();
 	}
-	/*for (int i = 0; i < k; i++)
+	for (int i = 0; i < k; i++)
 	{
 		std::cout << tab_10k[i] << " ";
-	}*/
+	}
 	time(&TimeStart);
 	//bubble(tab_10k, k);
-	insert(tab_10k, k);
+	//insert(tab_10k, k);
+	quicksort(tab_10k, 0, k);
 	time(&TimeEnd);
 	std::cout << "Posortowane\nCzas sortowania: " << difftime(TimeEnd, TimeStart)<<" sekundy\n";
 	std::cout << "\n";
-	/*for (int i = 0; i < k; i++)
+	for (int i = 0; i < k; i++)
 	{
 		std::cout << tab_10k[i] << " ";
-	}*/
-	delete[] tab_10k;
+	}
+	//delete[] tab_10k;
 	tab_10k = NULL;
 	system("pause");
 	return 1;

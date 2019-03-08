@@ -1,2 +1,2 @@
 #pragma once
-bool quicksort(int tab[], int s);
+bool quicksort(int tab[], int l, int p);
