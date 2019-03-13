@@ -29,32 +29,40 @@
 
 bool quicksort(int tab[], int l, int p)
 {
+	
+	int pivot = tab[(int)ceil((l + p) / 2)];
+	int i = l;
+	int j = p - 1;
 	while (true)
 	{
-		int pivot = tab[(int)ceil((l + p) / 2)];
-		int i = l;
+		
 		while (tab[i] < pivot)
 		{
 			i++;
 		}
-		int j = p - 1;
-		while (tab[j] > pivot&&j > 0)
+		
+		while ((tab[j] > pivot)&&(j > 0))
 		{
 			j--;
 		}
+
 		/*int temp;
 		temp = tab[i];
 		tab[i] = tab[j];
 		tab[j] = temp;*/
-		if(i<=j)
+		if(i<j)
 		{
 			std::swap(tab[i], tab[j]);
+			//std::cout << "zamiana";
 		}
 		else
 		{
 			break;
 		}
 	}
+	//std::cout << "b³ad";
+	//quicksort(tab, l, j);
+	//quicksort(tab, i, p);
 
 	return 1;
 }
