@@ -32,7 +32,7 @@ int main()
 	std::cout << "\n";
 	for (int i = 0; i < k; i++)
 	{
-		std::cout << tab_10k[i] << " ";
+		//std::cout << tab_10k[i] << " ";
 	}
 	delete[] tab_10k;
 	tab_10k = NULL;

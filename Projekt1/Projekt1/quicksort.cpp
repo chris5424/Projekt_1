@@ -27,6 +27,8 @@ int podziel(int tab[], int l, int p)
 			temp = tab[i];
 			tab[i] = tab[j];
 			tab[j] = temp;
+			i++;
+			j--;
 		}
 		else
 		{
