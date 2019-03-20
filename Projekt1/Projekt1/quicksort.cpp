@@ -3,9 +3,8 @@
 
 #include "quicksort.hpp"
 
-bool quicksort(int tab[], int l, int p)
+int podziel(int tab[], int l, int p)
 {
-	
 	int pivot = tab[((l + p) / 2)];
 	int i = l;
 	int j = p;
@@ -13,13 +12,15 @@ bool quicksort(int tab[], int l, int p)
 	{
 		while (tab[i] < pivot)
 		{
+			//std::cout << "l";
 			i++;
 		}
-		while ((tab[j] > pivot)&&(j > 0))
+		while ((tab[j] > pivot) && (j > 0))
 		{
+			//std::cout << "p";
 			j--;
 		}
-		if(i<j)
+		if (i < j)
 		{
 			//std::swap(tab[i], tab[j]);
 			int temp;
@@ -31,14 +32,18 @@ bool quicksort(int tab[], int l, int p)
 		{
 			break;
 		}
+		//std::cout << "w";
 	}
-	if (j > l)
+	return j;
+}
+
+bool quicksort(int tab[], int l, int p)
+{
+	if (p > l)
 	{
-		quicksort(tab, l, j);
-	}
-	if (i < p)
-	{
-		quicksort(tab, i+1, p);
+		int piv = podziel(tab, l, p);
+		quicksort(tab, l, piv);
+		quicksort(tab, piv + 1, p);
 	}
 	return 1;
 }
