@@ -1,16 +1,16 @@
 #include <iostream>
 #include <cstdlib>
-#include <time.h>
+#include <chrono>
 
 #include "bubble.hpp"
 #include "insert.hpp"
 #include "merge.hpp"
 #include "quicksort.hpp"
+#include "tester.hpp"
 
 
 int main()
 {
-	time_t TimeStart, TimeEnd;
 	std::cout << "Podaj wielkosc tablicy do posortowania: ";
 	int k;
 	std::cin >> k;
@@ -23,13 +23,26 @@ int main()
 	{
 		std::cout << tab_10k[i] << " ";
 	}*/
-	time(&TimeStart);
+	auto start = std::chrono::system_clock::now(); //start czasu
+
 	//bubble(tab_10k, k);
 	//insert(tab_10k, k);
-	quicksort(tab_10k, 0, k-1);
-	time(&TimeEnd);
-	std::cout << "Posortowane\nCzas sortowania: " << difftime(TimeEnd, TimeStart)<<" sekundy\n";
-	std::cout << "\n";
+	//quicksort(tab_10k, 0, k-1);
+
+	auto end = std::chrono::system_clock::now(); //koniec czasu
+
+	std::chrono::duration<double> elapsed_seconds = end - start;
+
+	if (czy_posortowane(tab_10k,k)==1)
+	{
+		std::cout << "Posortowane\nCzas sortowania: " << elapsed_seconds.count() << "s\n";
+		std::cout << "\n";
+	}
+	else
+	{
+		std::cout << "Blad sortowania\n";
+	}
+
 	for (int i = 0; i < k; i++)
 	{
 		//std::cout << tab_10k[i] << " ";
