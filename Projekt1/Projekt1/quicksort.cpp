@@ -39,13 +39,13 @@ int podziel(int tab[], int l, int p)
 	return j;
 }
 
-bool quicksort(int tab[], int l, int p)
+bool quicksort(int tab[], int l, int p, double sorted)
 {
 	if (p > l)
 	{
-		int piv = podziel(tab, l, p);
-		quicksort(tab, l, piv);
-		quicksort(tab, piv + 1, p);
+		int piv = podziel(tab, l, p*sorted);
+		quicksort(tab, l, piv,1);
+		quicksort(tab, piv + 1, p*sorted,1);
 	}
 	return 1;
 }

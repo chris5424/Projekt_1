@@ -1,0 +1,6 @@
+b¹belkowe 
+wstawianie
+quicksort
+scalanie
+kopcowanie
+introspektywne
