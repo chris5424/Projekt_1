@@ -12,27 +12,63 @@
 int main()
 {
 	std::cout << "Podaj wielkosc tablicy do posortowania: ";
-	int k;
-	std::cin >> k;
-	int* tab_10k = new int[k];
-	for (int i = 0; i < k; i++)
+
+	int wielkosc;
+	std::cin >> wielkosc;
+
+	/*int *tablica = new int[wielkosc];
+	for (int i = 0; i < wielkosc; i++)
+		{
+			tablica[i] = std::rand();
+		}
+	for (int i = 0; i < wielkosc; i++)
 	{
-		tab_10k[i] = std::rand();
+		std::cout << tablica[i] << " ";
 	}
-	for (int i = 0; i < k; i++)
+	std::cout << "\n";*/
+
+
+	int** tablica = new int *[100];
+	for (int row = 0; row < 99; row++)  //utworzenie 100 tablic
 	{
-		std::cout << tab_10k[i] << " ";
+		tablica[row] = new int[wielkosc];
 	}
-	std::cout << "\n";
+
+
+	for (int row = 0; row < 99; row++)
+	{
+		for (int i = 0; i < wielkosc; i++)
+		{
+			tablica[row][i] = std::rand();  //wype³nienie tablic liczbami losowymi
+		}
+	}
+
+
+	for (int row = 0; row < 99; row++)
+	{
+		for (int i = 0; i < wielkosc; i++)
+		{
+			//std::cout << tablica[row][i] << " ";  //wyœwietlenie tablic
+		}
+		//std::cout << "\n";
+	}
+	//std::cout << "\n";
+
+	for (int i = 0; i < 99; i++)
+	{
+		quicksort(tablica[i], 0, wielkosc - 1, 0.25);  //wstêpne sortowanie
+	}
+
 	auto start = std::chrono::system_clock::now(); //start czasu
-
-	//bubble(tab_10k, k);
-	//insert(tab_10k, k);
-	quicksort(tab_10k, 0, k-1,0.5);
-
+	for (int i = 0; i < 99; i++)
+	{
+		//bubble(tablica[i], wielkosc);
+		//insert(tablica[i], k);
+		quicksort(tablica[i], 0, wielkosc - 1, 1);  //czwarty parametr to stopieñ posortowania w % (0-1)
+	}
 	auto end = std::chrono::system_clock::now(); //koniec czasu
 
-	std::chrono::duration<double> elapsed_seconds = end - start;
+	std::chrono::duration<double> elapsed_seconds = end - start;  //obliczenie zmiany czasu
 
 	/*if (czy_posortowane(tab_10k,k)==1)
 	{
@@ -44,12 +80,31 @@ int main()
 		std::cout << "Blad sortowania\n";
 	}*/
 
-	for (int i = 0; i < k; i++)
+	std::cout << elapsed_seconds.count();
+
+	for (int row = 0; row < 99; row++)
 	{
-		std::cout << tab_10k[i] << " ";
+		for (int i = 0; i < wielkosc; i++)
+		{
+			//std::cout << tablica[row][i] << " ";  //wyœwietlenie tablic posortowanych
+		}
+		//std::cout << "\n";
 	}
-	delete[] tab_10k;
-	tab_10k = NULL;
+	//std::cout << "\n";
+	
+
+
+	for (int i = 0; i < 99; i++)  
+	{
+		delete[] tablica[i];   //zwolnienie pamiêci
+	}
+	delete[] tablica;
+
+	/*for (int i = 0; i < wielkosc; i++)
+	{
+		std::cout << tablica[i] << " ";
+	}*/
+
 	system("pause");
 	return 1;
 }

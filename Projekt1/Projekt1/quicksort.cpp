@@ -44,8 +44,22 @@ bool quicksort(int tab[], int l, int p, double sorted)
 	if (p > l)
 	{
 		int piv = podziel(tab, l, p*sorted);
-		quicksort(tab, l, piv,1);
-		quicksort(tab, piv + 1, p*sorted,1);
+		quicksort(tab, l, piv, 1);
+		quicksort(tab, piv + 1, p*sorted, 1);
 	}
 	return 1;
 }
+
+//bool quicksort(int **tab, int l, int p, double sorted)
+//{
+//	for (int j = 0; j < 99; j++)
+//	{
+//		if (p > l)
+//		{
+//			int piv = podziel(tab[j], l, p*sorted);
+//			quicksort(tab, l, piv, 1);
+//			quicksort(tab, piv + 1, p*sorted, 1);
+//		}
+//	}
+//	return 1;
+//}
