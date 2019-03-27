@@ -45,15 +45,15 @@ int main()
 	}
 
 
-	for (int row = 0; row < 99; row++)
-	{
-		for (int i = 0; i < wielkosc; i++)
-		{
-			std::cout << tablica[row][i] << " ";  //wyœwietlenie tablic
-		}
-		std::cout << "\n";
-	}
-	std::cout << "\n";
+	//for (int row = 0; row < 99; row++)
+	//{
+	//	for (int i = 0; i < wielkosc; i++)
+	//	{
+	//		std::cout << tablica[row][i] << " ";  //wyœwietlenie tablic nieposortowanych
+	//	}
+	//	std::cout << "\n";
+	//}
+	//std::cout << "\n";
 
 	for (int i = 0; i < 99; i++)
 	{
@@ -66,14 +66,14 @@ int main()
 	{
 		//bubble(tablica[i], wielkosc);
 		//insert(tablica[i], k);
-		//quicksort(tablica[i], 0, wielkosc - 1, 1);  //czwarty parametr to stopieñ posortowania w % (0-1)
-		 
+		quicksort(tablica[i], 0, wielkosc - 1, 1);  //czwarty parametr to stopieñ posortowania w % (0-1)
+
 	}
 	auto end = std::chrono::system_clock::now(); //koniec czasu
 
 	std::chrono::duration<double> elapsed_seconds = end - start;  //obliczenie zmiany czasu
 
-	/*if (czy_posortowane(tab_10k,k)==1)
+	if (czy_posortowane(tablica, wielkosc)==1)
 	{
 		std::cout << "Posortowane\nCzas sortowania: " << elapsed_seconds.count() << "s\n";
 		std::cout << "\n";
@@ -81,19 +81,18 @@ int main()
 	else
 	{
 		std::cout << "Blad sortowania\n";
-	}*/
-
-	//std::cout << elapsed_seconds.count();
-
-	for (int row = 0; row < 99; row++)
-	{
-		for (int i = 0; i < wielkosc; i++)
-		{
-			std::cout << tablica[row][i] << " ";  //wyœwietlenie tablic posortowanych
-		}
-		std::cout << "\n";
 	}
-	std::cout << "\n";
+
+
+	//for (int row = 0; row < 99; row++)
+	//{
+	//	for (int i = 0; i < wielkosc; i++)
+	//	{
+	//		std::cout << tablica[row][i] << " ";  //wyœwietlenie tablic posortowanych
+	//	}
+	//	std::cout << "\n";
+	//}
+	//std::cout << "\n";
 	
 
 

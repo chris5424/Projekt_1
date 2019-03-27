@@ -2,16 +2,19 @@
 #include "tester.hpp"
 
 
-bool czy_posortowane(int tab[],int rozmiar)
+bool czy_posortowane(int **tab,int rozmiar)
 {
-
-	int bad=0;
-	for (int i = 0; i < rozmiar-1; i++)
+	int bad = 0;
+	for (int row = 0; row < 99; row++)
 	{
-		if (tab[i] > tab[i + 1])
+		for (int i = 0; i < rozmiar - 1; i++)
 		{
-			bad++;
+			if (tab[row][i] > tab[row][i + 1])
+			{
+				bad++;
+			}
 		}
+		
 	}
 	if (bad > 0)
 	{
