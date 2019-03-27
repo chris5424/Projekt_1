@@ -12,21 +12,11 @@
 
 int main()
 {
-	std::cout << "Podaj wielkosc tablicy do posortowania: ";
+	//std::cout << "Podaj wielkosc tablicy do posortowania: ";
 
-	int wielkosc;
-	std::cin >> wielkosc;
+	int wielkosc=100;
+	//std::cin >> wielkosc;
 
-	/*int *tablica = new int[wielkosc];
-	for (int i = 0; i < wielkosc; i++)
-		{
-			tablica[i] = std::rand();
-		}
-	for (int i = 0; i < wielkosc; i++)
-	{
-		std::cout << tablica[i] << " ";
-	}
-	std::cout << "\n";*/
 
 
 	int** tablica = new int *[100];
@@ -64,10 +54,11 @@ int main()
 	auto start = std::chrono::system_clock::now(); //start czasu
 	for (int i = 0; i < 99; i++)
 	{
+		int *tab_pom = new int[wielkosc];
 		//bubble(tablica[i], wielkosc);
 		//insert(tablica[i], k);
-		quicksort(tablica[i], 0, wielkosc - 1, 1);  //czwarty parametr to stopieñ posortowania w % (0-1)
-
+		//quicksort(tablica[i], 0, wielkosc - 1, 1);  //czwarty parametr to stopieñ posortowania w % (0-1)
+		merge_sort(tablica[i], tab_pom, 0, wielkosc-1);
 	}
 	auto end = std::chrono::system_clock::now(); //koniec czasu
 
