@@ -4,6 +4,7 @@
 
 bool czy_posortowane(int tab[],int rozmiar)
 {
+
 	int bad=0;
 	for (int i = 0; i < rozmiar-1; i++)
 	{

@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="bubble.cpp" />
     <ClCompile Include="generator.cpp" />
+    <ClCompile Include="inv_quicksort.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="insert.cpp" />
     <ClCompile Include="merge.cpp" />
@@ -130,6 +131,7 @@
     <ClInclude Include="bubble.hpp" />
     <ClInclude Include="generator.hpp" />
     <ClInclude Include="insert.hpp" />
+    <ClInclude Include="inv_quicksort.hpp" />
     <ClInclude Include="merge.hpp" />
     <ClInclude Include="quicksort.hpp" />
     <ClInclude Include="tester.hpp" />

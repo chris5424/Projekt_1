@@ -6,6 +6,7 @@
 #include "insert.hpp"
 #include "merge.hpp"
 #include "quicksort.hpp"
+#include "inv_quicksort.hpp"
 #include "tester.hpp"
 
 
@@ -48,15 +49,16 @@ int main()
 	{
 		for (int i = 0; i < wielkosc; i++)
 		{
-			//std::cout << tablica[row][i] << " ";  //wyœwietlenie tablic
+			std::cout << tablica[row][i] << " ";  //wyœwietlenie tablic
 		}
-		//std::cout << "\n";
+		std::cout << "\n";
 	}
-	//std::cout << "\n";
+	std::cout << "\n";
 
 	for (int i = 0; i < 99; i++)
 	{
-		quicksort(tablica[i], 0, wielkosc - 1, 0.25);  //wstêpne sortowanie
+		//quicksort(tablica[i], 0, wielkosc - 1, 0.25);  //wstêpne sortowanie
+		//inv_quicksort(tablica[i], 0, wielkosc - 1);    //sortowanie odwrotne
 	}
 
 	auto start = std::chrono::system_clock::now(); //start czasu
@@ -64,7 +66,8 @@ int main()
 	{
 		//bubble(tablica[i], wielkosc);
 		//insert(tablica[i], k);
-		quicksort(tablica[i], 0, wielkosc - 1, 1);  //czwarty parametr to stopieñ posortowania w % (0-1)
+		//quicksort(tablica[i], 0, wielkosc - 1, 1);  //czwarty parametr to stopieñ posortowania w % (0-1)
+		 
 	}
 	auto end = std::chrono::system_clock::now(); //koniec czasu
 
@@ -80,17 +83,17 @@ int main()
 		std::cout << "Blad sortowania\n";
 	}*/
 
-	std::cout << elapsed_seconds.count();
+	//std::cout << elapsed_seconds.count();
 
 	for (int row = 0; row < 99; row++)
 	{
 		for (int i = 0; i < wielkosc; i++)
 		{
-			//std::cout << tablica[row][i] << " ";  //wyœwietlenie tablic posortowanych
+			std::cout << tablica[row][i] << " ";  //wyœwietlenie tablic posortowanych
 		}
-		//std::cout << "\n";
+		std::cout << "\n";
 	}
-	//std::cout << "\n";
+	std::cout << "\n";
 	
 
 
@@ -100,10 +103,6 @@ int main()
 	}
 	delete[] tablica;
 
-	/*for (int i = 0; i < wielkosc; i++)
-	{
-		std::cout << tablica[i] << " ";
-	}*/
 
 	system("pause");
 	return 1;
