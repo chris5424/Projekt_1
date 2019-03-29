@@ -115,22 +115,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bubble.cpp" />
-    <ClCompile Include="generator.cpp" />
-    <ClCompile Include="inv_quicksort.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="insert.cpp" />
-    <ClCompile Include="merge.cpp" />
-    <ClCompile Include="quicksort.cpp" />
-    <ClCompile Include="tester.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bubble.hpp" />
-    <ClInclude Include="generator.hpp" />
+    <ClInclude Include="heapsort.hpp" />
     <ClInclude Include="insert.hpp" />
+    <ClInclude Include="introsort.hpp" />
     <ClInclude Include="inv_quicksort.hpp" />
     <ClInclude Include="merge.hpp" />
     <ClInclude Include="quicksort.hpp" />
