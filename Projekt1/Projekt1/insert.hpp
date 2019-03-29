@@ -1,9 +1,11 @@
 #pragma once
-bool insert(int tab[], int s)
+
+template <typename T>
+bool insert(T tab[], int s)
 {
 	for (int i = 1; i < s; i++)
 	{
-		int porownywana = tab[i];
+		T porownywana = tab[i];
 		int j = i - 1;
 		while (j >= 0 && porownywana < tab[j])
 		{

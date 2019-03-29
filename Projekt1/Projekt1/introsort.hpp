@@ -3,7 +3,8 @@
 #include "quicksort.hpp"
 #include "heapsort.hpp"
 
-void sort(int tab[], int l, int p, int maxdepth)
+template <typename T>
+void sort(T tab[], int l, int p, int maxdepth)
 {
 	int piv = podziel(tab, 0, p);
 	if (p <= 1)
@@ -20,7 +21,8 @@ void sort(int tab[], int l, int p, int maxdepth)
 
 }
 
-void intro_sort(int tab[], int rozmiar)
+template <typename T>
+void intro_sort(T tab[], int rozmiar)
 {
 	int maxdepth = static_cast<int>((2*log(rozmiar))/log(2));
 	sort(tab, 0, rozmiar, maxdepth);

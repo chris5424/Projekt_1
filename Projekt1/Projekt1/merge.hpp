@@ -1,6 +1,7 @@
 #pragma once
 
-void merge(int tab[], int pom[], int left, int mid, int right)
+template <typename T>
+void merge(T tab[], T pom[], int left, int mid, int right)
 {
 	int i = left, j = mid + 1;
 
@@ -31,7 +32,8 @@ void merge(int tab[], int pom[], int left, int mid, int right)
 	}
 }
 
-bool merge_sort(int tab[], int pom[], int left, int right)
+template <typename T>
+bool merge_sort(T tab[], T pom[], int left, int right)
 {
 	if (right <= left) return 1;  //gdy zostaje jeden element - koniec sortowania
 

@@ -62,7 +62,7 @@ int main()
 		//quicksort(tablica[i], 0, wielkosc - 1, 1);  //czwarty parametr to stopieñ posortowania w % (0-1)
 		//merge_sort(tablica[i], tab_pom, 0, wielkosc-1);
 		//heapsort(tablica[i], wielkosc);
-		//intro_sort(tablica[i], wielkosc);
+		intro_sort(tablica[i], wielkosc);
 	}
 	auto end = std::chrono::system_clock::now(); //koniec czasu
 

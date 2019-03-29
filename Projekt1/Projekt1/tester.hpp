@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
-bool czy_posortowane(int **tab, int rozmiar)
+
+template <typename T>
+bool czy_posortowane(T **tab, int rozmiar)
 {
 	int bad = 0;
 	for (int row = 0; row < 99; row++)

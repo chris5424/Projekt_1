@@ -1,5 +1,7 @@
 #pragma once
-void maxheap(int tab[], int rozmiar, int parentInd)
+
+template <typename T>
+void maxheap(T tab[], int rozmiar, int parentInd)
 {
 	int maxIndex = parentInd;
 	int leftChild = parentInd * 2 + 1;
@@ -12,14 +14,16 @@ void maxheap(int tab[], int rozmiar, int parentInd)
 		maxIndex = rightChild;
 	}
 	if (maxIndex != parentInd) {
-		int temp;
+		T temp;
 		temp = tab[maxIndex];
 		tab[maxIndex] = tab[parentInd];
 		tab[parentInd] = temp;
 		maxheap(tab, rozmiar, maxIndex);
 	}
 }
-void heapsort(int tab[], int rozmiar)
+
+template <typename T>
+void heapsort(T tab[], int rozmiar)
 {
 	if (rozmiar == 0) {
 		return;
@@ -30,7 +34,7 @@ void heapsort(int tab[], int rozmiar)
 	}
 
 	for (int i = do_posortowania - 1; i > 0; i--) {
-		int temp;
+		T temp;
 		temp = tab[0];
 		tab[0] = tab[i];
 		tab[i] = temp;

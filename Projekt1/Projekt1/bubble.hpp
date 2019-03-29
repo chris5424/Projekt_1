@@ -1,6 +1,7 @@
 #pragma once
-//template <typename T1>
-bool bubble(int tab[], int s)
+
+template <typename T>
+bool bubble(T tab[], int s)
 {
 	bool zamiana = 0;
 	do
@@ -10,7 +11,7 @@ bool bubble(int tab[], int s)
 		{
 			if (tab[i] > tab[i + 1])
 			{
-				int temp;
+				T temp;
 				temp = tab[i];
 				tab[i] = tab[i + 1];
 				tab[i + 1] = temp;
