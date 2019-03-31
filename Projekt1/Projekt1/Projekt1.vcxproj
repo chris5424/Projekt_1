@@ -118,6 +118,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="plik.txt" />
     <Text Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +130,7 @@
     <ClInclude Include="merge.hpp" />
     <ClInclude Include="quicksort.hpp" />
     <ClInclude Include="tester.hpp" />
+    <ClInclude Include="tester1x1.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
