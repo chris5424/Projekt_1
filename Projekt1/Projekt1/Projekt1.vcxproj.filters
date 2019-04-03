@@ -25,6 +25,9 @@
     <Text Include="mergesort.txt">
       <Filter>Pliki zasobów</Filter>
     </Text>
+    <Text Include="plik.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

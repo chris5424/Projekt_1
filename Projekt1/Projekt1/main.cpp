@@ -61,8 +61,8 @@ for (int rozmiar = 0; rozmiar < 5; rozmiar++)
 			auto start = std::chrono::system_clock::now();
 
 			//Tu wpisujemy sortowanie
-			//insert(tablica[i], rozmiaryTablic[rozmiar]);
-			quicksort(tablica[i], 0, rozmiaryTablic[rozmiar] - 1, 1); //czwarty parametr to stopieñ posortowania w % (0-1)
+			insert(tablica[i], rozmiaryTablic[rozmiar]);
+			//quicksort(tablica[i], 0, rozmiaryTablic[rozmiar] - 1, 1); //czwarty parametr to stopieñ posortowania w % (0-1)
 			//merge_sort(tablica[i],tablica_pomocnicza, 0, rozmiaryTablic[rozmiar] - 1);
 			//heapsort(tablica[i], rozmiaryTablic[rozmiar]);
 			//intro_sort(tablica[i], rozmiaryTablic[rozmiar]);
