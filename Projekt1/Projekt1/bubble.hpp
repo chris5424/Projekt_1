@@ -1,13 +1,13 @@
 #pragma once
 
 template <typename T>
-bool bubble(T tab[], int s)
+bool bubble(T tab[], int size)
 {
 	bool zamiana = 0;
 	do
 	{
 		zamiana = 0;
-		for (int i = 0; i < s - 1; i++)
+		for (int i = 0; i < size - 1; i++)
 		{
 			if (tab[i] > tab[i + 1])
 			{

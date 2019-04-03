@@ -48,16 +48,16 @@ void heapsort(T tab[], int rozmiar)
 
 
 template <typename T>
-void maxheap_intro(T tab[], int rozmiar, int parentInd)
+void maxheap_intro(T tab[], int right, int parentInd)
 {
 	int maxIndex = parentInd;
 	int leftChild = parentInd * 2 + 1;
 	int rightChild = parentInd * 2 + 2;
 
-	if (leftChild < rozmiar && tab[leftChild] > tab[maxIndex]) {
+	if (leftChild < right && tab[leftChild] > tab[maxIndex]) {
 		maxIndex = leftChild;
 	}
-	if (rightChild < rozmiar && tab[rightChild] > tab[maxIndex]) {
+	if (rightChild < right && tab[rightChild] > tab[maxIndex]) {
 		maxIndex = rightChild;
 	}
 	if (maxIndex != parentInd) {
@@ -65,26 +65,26 @@ void maxheap_intro(T tab[], int rozmiar, int parentInd)
 		temp = tab[maxIndex];
 		tab[maxIndex] = tab[parentInd];
 		tab[parentInd] = temp;
-		maxheap(tab, rozmiar, maxIndex);
+		maxheap(tab, right, maxIndex);
 	}
 }
 template <typename T>
-void heapsort_intro(T tab[],int l, int rozmiar)
+void heapsort_intro(T tab[],int left, int right)
 {
-	if ((rozmiar-l) == 0) {
+	if ((right-left) == 0) {
 		return;
 	}
-	int do_posortowania = rozmiar-l;
-	for (int i = do_posortowania / 2 - 1; i >= l; i--) {
-		maxheap(tab, rozmiar, i);
+	int do_posortowania = right-left;
+	for (int i = do_posortowania / 2 - 1; i >= left; i--) {
+		maxheap(tab, right, i);
 	}
 
-	for (int i = do_posortowania - 1; i > l; i--) {
+	for (int i = do_posortowania - 1; i > left; i--) {
 		T temp;
-		temp = tab[l];
-		tab[l] = tab[i];
+		temp = tab[left];
+		tab[left] = tab[i];
 		tab[i] = temp;
 		do_posortowania--;
-		maxheap(tab, do_posortowania, l);
+		maxheap(tab, do_posortowania, left);
 	}
 }

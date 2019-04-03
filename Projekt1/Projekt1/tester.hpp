@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 
 template <typename T>
 bool czy_posortowane(T **tab, int rozmiar)

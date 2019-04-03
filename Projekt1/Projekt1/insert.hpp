@@ -1,9 +1,9 @@
 #pragma once
 
 template <typename T>
-bool insert(T tab[], int s)
+bool insert(T tab[], int size)
 {
-	for (int i = 1; i < s; i++)
+	for (int i = 1; i < size; i++)
 	{
 		T porownywana = tab[i];
 		int j = i - 1;

@@ -118,13 +118,6 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="introsort.txt" />
-    <Text Include="mergesort.txt" />
-    <Text Include="plik.txt" />
-    <Text Include="quicksort.txt" />
-    <Text Include="readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="bubble.hpp" />
     <ClInclude Include="heapsort.hpp" />
     <ClInclude Include="insert.hpp" />

@@ -4,25 +4,23 @@
 #include "heapsort.hpp"
 #include "insert.hpp"
 
-//Moja dzia³a i to lepiej ni¿ ta od Zwolina nie ruszaæ!!!!!!
 template <typename T>
-void intro_sort(T tab[], int firstIndex, int lastIndex, int maxdepth)
+void intro_sort(T tab[], int left, int right, int maxdepth)
 {
 	if (maxdepth == 0)
 	{
-		heapsort_intro(tab, firstIndex, lastIndex);
+		heapsort_intro(tab, left, right);
 		return;
 	}
-	int n = podziel(tab, firstIndex, lastIndex);
+	int n = podziel(tab, left, right);
 	if (n > 9)
 	{
-		intro_sort(tab, firstIndex, n, maxdepth - 1);
+		intro_sort(tab, left, n, maxdepth - 1);
 	}
-	if ((lastIndex-1-n) > 9)
+	if ((right-1-n) > 9)
 	{
-		intro_sort(tab, n + 1, lastIndex, maxdepth - 1);
+		intro_sort(tab, n + 1, right, maxdepth - 1);
 	}
-	
 }
 template <typename T>
 void intro_sort(T tab[], int rozmiar)
@@ -31,24 +29,3 @@ void intro_sort(T tab[], int rozmiar)
 	intro_sort(tab, 0, rozmiar, maxdepth);
 	insert(tab, rozmiar);
 }
-
-
-//Zwolina dzia³a nie ruszaæ!!!!!
-//void intro_sort(int tab[], int firstIndex, int lastIndex, int maxdepth) 
-//{
-//	if (firstIndex < lastIndex)
-//	{
-//		if (maxdepth==0)
-//		{
-//			heapsort_intro(tab, firstIndex, lastIndex);
-//		}
-//		int n = podziel(tab, firstIndex, lastIndex);
-//		intro_sort(tab, firstIndex, n, maxdepth - 1);
-//		intro_sort(tab, n + 1, lastIndex, maxdepth - 1);
-//	}
-//}
-//void intro_sort(int tab[], int rozmiar)
-//{
-//	int maxdepth = 2 * floor(log(rozmiar));
-//	intro_sort(tab, 0, rozmiar, maxdepth);
-//}

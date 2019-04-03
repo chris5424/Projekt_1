@@ -1,26 +1,23 @@
 #pragma once
 
 template <typename T>
-int inv_podziel(T tab[], int l, int p)
+int inv_podziel(T tab[], int left, int right)
 {
-	T pivot = tab[((l + p) / 2)];
-	int i = l;
-	int j = p;
+	T pivot = tab[((left + right) / 2)];
+	int i = left;
+	int j = right;
 	while (true)
 	{
 		while (tab[i] > pivot)
 		{
-			//std::cout << "l";
 			i++;
 		}
 		while ((tab[j] < pivot) && (j > 0))
 		{
-			//std::cout << "p";
 			j--;
 		}
 		if (i < j)
 		{
-			//std::swap(tab[i], tab[j]);
 			T temp;
 			temp = tab[i];
 			tab[i] = tab[j];
@@ -32,19 +29,18 @@ int inv_podziel(T tab[], int l, int p)
 		{
 			break;
 		}
-		//std::cout << "w";
 	}
 	return j;
 }
 
 template <typename T>
-bool inv_quicksort(T tab[], int l, int p)
+bool inv_quicksort(T tab[], int left, int right)
 {
-	if (p > l)
+	if (right > left)
 	{
-		T piv = inv_podziel(tab, l, p);
-		inv_quicksort(tab, l, piv);
-		inv_quicksort(tab, piv + 1, p);
+		T piv = inv_podziel(tab, left, right);
+		inv_quicksort(tab, left, piv);
+		inv_quicksort(tab, piv + 1, right);
 	}
 	return 1;
 }

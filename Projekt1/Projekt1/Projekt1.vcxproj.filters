@@ -15,21 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="readme.txt" />
-    <Text Include="introsort.txt">
-      <Filter>Pliki zasobów</Filter>
-    </Text>
-    <Text Include="quicksort.txt">
-      <Filter>Pliki zasobów</Filter>
-    </Text>
-    <Text Include="mergesort.txt">
-      <Filter>Pliki zasobów</Filter>
-    </Text>
-    <Text Include="plik.txt">
-      <Filter>Pliki zasobów</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
