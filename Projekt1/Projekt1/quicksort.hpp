@@ -1,7 +1,7 @@
 #pragma once
 
 template <typename T>
-int podziel(T tab[], int left, int right)
+int divide(T tab[], int left, int right)
 {
 	T pivot = tab[((left + right) / 2)];
 	int i = left;
@@ -39,9 +39,9 @@ bool quicksort(T tab[], int left, int right, double sorted)
 {
 	if (right > left)
 	{
-		//podzia³ tablicy
-		T piv = podziel(tab, left, static_cast<T>(right*sorted));
-		//wywo³ania rekurencyjne
+		//divide table
+		T piv = divide(tab, left, static_cast<T>(right*sorted));
+		//recursive triggering
 		quicksort(tab, left, piv, 1);
 		quicksort(tab, piv + 1, static_cast<T>(right*sorted), 1);
 	}

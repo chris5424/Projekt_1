@@ -28,18 +28,18 @@ void heapsort(T tab[], int rozmiar)
 	if (rozmiar == 0) {
 		return;
 	}
-	int do_posortowania = rozmiar;
-	for (int i = do_posortowania / 2 - 1; i >= 0; i--) {
+	int to_sort = rozmiar;
+	for (int i = to_sort / 2 - 1; i >= 0; i--) {
 		maxheap(tab, rozmiar, i);
 	}
 
-	for (int i = do_posortowania - 1; i > 0; i--) {
+	for (int i = to_sort - 1; i > 0; i--) {
 		T temp;
 		temp = tab[0];
 		tab[0] = tab[i];
 		tab[i] = temp;
-		do_posortowania--;
-		maxheap(tab, do_posortowania, 0);
+		to_sort--;
+		maxheap(tab, to_sort, 0);
 	}
 }
 
@@ -74,17 +74,17 @@ void heapsort_intro(T tab[],int left, int right)
 	if ((right-left) == 0) {
 		return;
 	}
-	int do_posortowania = right-left;
-	for (int i = do_posortowania / 2 - 1; i >= left; i--) {
+	int to_sort = right-left;
+	for (int i = to_sort / 2 - 1; i >= left; i--) {
 		maxheap(tab, right, i);
 	}
 
-	for (int i = do_posortowania - 1; i > left; i--) {
+	for (int i = to_sort - 1; i > left; i--) {
 		T temp;
 		temp = tab[left];
 		tab[left] = tab[i];
 		tab[i] = temp;
-		do_posortowania--;
-		maxheap(tab, do_posortowania, left);
+		to_sort--;
+		maxheap(tab, to_sort, left);
 	}
 }

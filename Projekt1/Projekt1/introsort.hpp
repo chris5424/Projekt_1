@@ -12,7 +12,7 @@ void intro_sort(T tab[], int left, int right, int maxdepth)
 		heapsort_intro(tab, left, right);
 		return;
 	}
-	int n = podziel(tab, left, right);
+	int n = divide(tab, left, right);
 	if (n > 9)
 	{
 		intro_sort(tab, left, n, maxdepth - 1);

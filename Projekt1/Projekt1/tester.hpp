@@ -1,12 +1,12 @@
 #pragma once
 
 template <typename T>
-bool czy_posortowane(T **tab, int rozmiar)
+bool ifSorted(T **tab, int size)
 {
 	int bad = 0;
 	for (int row = 0; row < 99; row++)
 	{
-		for (int i = 0; i < rozmiar - 1; i++)
+		for (int i = 0; i < size - 1; i++)
 		{
 			if (tab[row][i] > tab[row][i + 1])
 			{

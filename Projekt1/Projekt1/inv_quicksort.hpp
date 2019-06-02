@@ -1,7 +1,7 @@
 #pragma once
 
 template <typename T>
-int inv_podziel(T tab[], int left, int right)
+int inverted_divide(T tab[], int left, int right)
 {
 	T pivot = tab[((left + right) / 2)];
 	int i = left;
@@ -34,13 +34,13 @@ int inv_podziel(T tab[], int left, int right)
 }
 
 template <typename T>
-bool inv_quicksort(T tab[], int left, int right)
+bool inverted_quicksort(T tab[], int left, int right)
 {
 	if (right > left)
 	{
-		T piv = inv_podziel(tab, left, right);
-		inv_quicksort(tab, left, piv);
-		inv_quicksort(tab, piv + 1, right);
+		T piv = inverted_divide(tab, left, right);
+		inverted_quicksort(tab, left, piv);
+		inverted_quicksort(tab, piv + 1, right);
 	}
 	return 1;
 }

@@ -2,11 +2,11 @@
 #include <iostream>
 
 template <typename T>
-bool czy_posortowane1x1(T tab[], int rozmiar)
+bool ifSorted1x1(T tab[], int size)
 {
 	int bad = 0;
 
-	for (int i = 0; i < rozmiar - 1; i++)
+	for (int i = 0; i < size - 1; i++)
 	{
 		if (tab[i] > tab[i + 1])
 		{
